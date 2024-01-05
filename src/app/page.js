@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function Home() {
   const [prompt, setPrompt] = useState("");
-  const [isResult, setResult] = useState("");
+  const [isResult, setResult] = useState("https://oaidalleapiprodscus.blob.core.windows.net/private/org-UfkJp2YtgNT8O798QYRLalxm/user-VI6qVPthegtRguGi5p5fytbR/img-1pgaAkLfxoFKj1vybyWObly6.png?st=2024-01-05T01%3A10%3A07Z&se=2024-01-05T03%3A10%3A07Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-04T08%3A00%3A15Z&ske=2024-01-05T08%3A00%3A15Z&sks=b&skv=2021-08-06&sig=Hjbxm9uxnbxmh1fSG7q/uOjJ6EOMCfLmy0TjQhhlCLg%3D");
   const [loading, setLoading ] = useState(false);
 
   const onSubmit = async (e) => {
@@ -54,7 +54,7 @@ export default function Home() {
              focus:outline-none"
             placeholder="Ingresa una petición..."
           />
-          <button className="py-3 px-5 block text-center text-lg text-white font-semibold bg-gray-700 rounded-xl disabled:opacity-50">
+          <button className="py-3 px-5 block text-center text-lg text-white font-semibold bg-gray-700 rounded-xl disabled:opacity-50" disabled={!prompt || loading}>
             Generar
           </button>
         </form>
